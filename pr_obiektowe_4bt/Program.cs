@@ -46,6 +46,29 @@
         
     }
 
+    public class Samochod_osobowy : Samochod
+    {
+        public String nadwozie;
+        public String kolor;
+
+       public Samochod_osobowy(string marka, string mod, int rok, double pojemnosc, double przebieg, string nadwozie, string kolor) : base (marka, mod, rok, pojemnosc, przebieg) 
+        {
+            this.nadwozie = nadwozie;
+            this.kolor = kolor;
+        }
+
+        public void wyswietl() 
+        {
+            Console.WriteLine("Marka " + marka + " Model " + model + "\nRok " + rok
+                               + " Pojemność " + pojemnosc + " Przebieg " + przebieg 
+                               + "\nKolor " + kolor + " Nadwozie " + nadwozie + "\n");
+
+
+        }
+
+
+    }
+
 
     internal class Program
     {
@@ -54,7 +77,12 @@
             Samochod sam1 = new Samochod();
             Samochod sam2 = new Samochod();
             Samochod sam3 = new Samochod("Audi", "A8", 2019, 4.2, 29333);
-              
+
+            Samochod_osobowy sam_os1 = new Samochod_osobowy("VW", "Bora", 2000, 2.0, 300000, "Sedan", "granatowy");
+            
+            
+
+
             sam1.marka = "VW";
             sam1.wyswietl();
 
@@ -63,6 +91,7 @@
 
             sam3.wyswietl();
 
+            sam_os1.wyswietl();
 
         }
 
